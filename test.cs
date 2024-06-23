@@ -227,31 +227,31 @@ string [] pallets = {"B14", "A11", "B12", "A13"};
 //CODING CHALLENGE: SORD ORDER IDS AND TAG ERRORS
 
 
-string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
+// string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
 
-//split string and put elements in an array
-string[] orderArray = orderStream.Split(",");
+// //split string and put elements in an array
+// string[] orderArray = orderStream.Split(",");
 
-// sort array alphabetically
-Array.Sort(orderArray); 
-// foreach(string item in orderArray)
+// // sort array alphabetically
+// Array.Sort(orderArray); 
+// // foreach(string item in orderArray)
+// // {
+// //     Console.WriteLine(item);
+// // }
+
+// for(int i = 0; i < orderArray.Length; i++)
 // {
-//     Console.WriteLine(item);
+//     char[] id = orderArray[i].ToCharArray();
+
+//     if(id.Length != 4)
+//     {
+//         Console.WriteLine($"{orderArray[i]}     - Error");
+//     }
+//     else
+//     {
+//         Console.WriteLine(orderArray[i]);
+//     }
 // }
-
-for(int i = 0; i < orderArray.Length; i++)
-{
-    char[] id = orderArray[i].ToCharArray();
-
-    if(id.Length != 4)
-    {
-        Console.WriteLine($"{orderArray[i]}     - Error");
-    }
-    else
-    {
-        Console.WriteLine(orderArray[i]);
-    }
-}
 
 
 // OR
@@ -267,3 +267,58 @@ for(int i = 0; i < orderArray.Length; i++)
 //         Console.WriteLine(item + "\t- Error");
 //     }
 // }
+
+
+
+
+//#################################################################################
+//#################################################################################
+//#################################################################################
+
+//STRING FORMATTING
+
+//Composite Formatting 
+// string first = "Hello";
+// string second = "world";
+// string result = string.Format("{0} {1}!!!", first, second);
+// Console.WriteLine(result);
+
+// Console.WriteLine("{0} {1}!!!", second,  first); //world Hello!!!
+// Console.WriteLine("{0} {0} {0}", first, second); //Hello Hello Hello
+
+
+
+//String interpolation
+// string first = "Hello";
+// string second = "World";
+// Console.WriteLine($"{first} {second}!");
+// Console.WriteLine($"{second} {first}!");
+// Console.WriteLine($"{first} {first} {first}!");
+
+
+//Currency Formatting
+// decimal price = 139.3m;
+// int discount = 40;
+// Console.WriteLine($"Price: {price:C} (Save {discount:C})");
+
+
+//NUMBER FORMATTING
+// decimal measurement = 12456779.45677474m;
+// Console.WriteLine($"The answer is {measurement:N} units");
+// Console.WriteLine($"The answer is {measurement:N5} units");
+
+
+//FORMATTING Percentages
+// decimal tax = .36785666m;
+// Console.WriteLine($"Tax rate: {tax:P2}");
+// Console.WriteLine($"Tax rate: {tax:P4}");
+
+
+decimal price = 90.799m;
+decimal salePrice = 50.9957m;
+string yourDiscount = String.Format("You saved {0:C3} off your regular {1:C2} price.", (price - salePrice), (price));
+
+yourDiscount += $"A discount of {((price - salePrice) / price):P2}!";
+Console.WriteLine(yourDiscount);
+
+
